@@ -1,0 +1,396 @@
+/* General CSS - START */
+html, body {
+    background-color: #f5f5f5 !important;
+}
+
+.site-wrapper{
+    width: auto;
+    height: 100%;
+}
+.uk-button-danger:disabled, .uk-button-default:disabled, .uk-button-primary:disabled, .uk-button-secondary:disabled {
+    background-color: transparent !important;
+    color: #999 !important;
+    border-color: #e5e5e5 !important;
+}
+.uk-tab>*>a{
+	display: block !important;
+	text-align: center !important;
+}
+#modal-sections ul, #search-modal-sections ul li{
+    padding-left: 0;
+}
+#modal-sections ul li, #search-modal-sections ul li{
+    list-style: none;
+}
+.uk-modal-body {
+    padding: 30px 10px 20px 10px;
+}
+.search_item1 .fa-search, .search_item1 .fa-calendar{
+    margin-top: 10px;
+    color: #007bff;
+}
+.top-search a{
+    padding: 0;
+    width: 30px;
+}
+.search_item1 button{
+    width: 100%;
+}
+.top-search a.search-toggle {
+    float: left;
+	display: block;
+	font-size: 18px;
+	color: #ffffff;
+}
+.top-search {
+	position: relative;
+	float: right;
+	margin: 0 0 0 20px;
+    display: block;
+	margin-left: auto;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.footer ul{
+    margin: 0;
+    height: 55px;
+}
+.footer ul li{
+    padding-left: 0;
+}
+.uk-tab::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.footer a{
+    text-transform: none !important;
+}
+#content-wrapper{
+    padding-bottom: 60px;
+}
+.form-row {
+    margin-right: -5px;
+    margin-left: 0px;
+}
+.uk-panel {
+    padding: 10px 5px 5px 5px;
+}
+.uk-button-primary {
+    color: #fff!important;
+}
+.jumbotron {
+    font-family: Roboto Condensed !important;
+    box-shadow: 0px 0.5px 2px rgb(0 0 0 / 3%) !important;
+    padding: 1rem 1rem !important;
+	margin-bottom: 1rem !important;
+	background-color: #fff !important;
+	border-radius: .0rem !important;
+}
+/* General CSS - END */
+
+/* hotel_detail.html - START */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+.info-item{
+    float: left;
+    padding-top: 10px !important;
+}
+.info-title{
+    font-size: 16px;
+    color: #999;
+    font-weight: lighter;
+}
+.info-list-item{
+	margin-left: 40px;
+}
+.info-list-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
+}
+h3.title{
+    margin: 10px 0 15px 0;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0075FF;
+    padding: 0 40px;
+}
+h3.slogan{
+    margin: 10px 0 15px 0;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0075FF;
+    padding: 0 40px;
+}
+.hotel-detail-info { /* .jumbotron */
+    padding-bottom: 70px !important;
+    margin-top: 0;
+    height: 95%;
+}
+.hotel-detail-info  ul, .jumbotron ul{ /* .jumbotron */
+	padding: 0 5px 0px 5px;
+	margin: 0;
+}
+.hotel-detail-info  ul.info-list li, .jumbotron ul.info-list li{ /* .jumbotron */
+	margin: 10px 0 0 0;
+	padding: 15px 0 0 0;
+	list-style-type: none;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: 45px;
+}
+.info-advise{
+    height: 92%;
+    /* overflow-x: scroll; */
+    font-family: Roboto Condensed;
+    /* overflow: hidden; */
+    text-align: justify;
+}
+.info-advise p{
+    margin: 0;
+}
+.info-advise ol.square_list{
+    list-style-type: square;
+}
+.filter_active{
+    background-color: #007bff;
+}
+.filter_active p{
+    color: #fff;
+}
+.header-brand-logo p{
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    color: #fff;
+    margin: 12px 0 0 20px;
+}
+
+.rating .voted {
+    color: #FFD600 !important;
+}
+.icon-star:before {
+    content: '\e80b';
+}
+/* hotel_detail.html - END */
+
+/* room_list.html - START */
+#select-person i{
+    color: #0075ff;
+    margin-right: 10px;
+}
+.info-room{
+    height: 70px;
+}
+.info-list-item table th{
+    color: #0075ff;
+}
+.room_discount{
+    text-decoration: line-through; padding-right: 10px; color:#9c9c9c;
+}
+.checkbox {
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 15px;
+    width: 70%;
+    float: left;
+}
+.rooms{
+    padding: 0 !important;
+}
+.rooms table {
+    margin-top: 0;
+    /* margin-left: 5px; */
+}
+#room_qty{
+    padding-top: 15px;
+}
+#modal-content{
+    margin: auto;
+}
+.uk-modal-header h3, .uk-modal-header p{
+    text-align: center;
+    margin-top: 0px;
+    font-family: Roboto Condensed;
+}
+#pay_amount{
+    font-size: xx-large; font-weight: 800;
+}
+.price-content th{
+    font-weight: normal;
+}
+.price-total{
+    font-size: 18px;
+}
+.order_trip{
+    margin-top: 15px;
+}
+.inactive{
+    color: #fff!important;
+    background-color: #d4d4d4!important; 
+}
+.rooms{
+    margin-bottom: 0rem !important;
+}
+/* room_list.html - END */
+
+/* photo.html - START */
+.jumbotron p{
+    margin: 0;
+    padding: 0;            
+}
+.uk-margin{
+    margin-bottom: 0;
+}
+.uk-margin input{
+    margin: 5px 0 5px 5px;
+}
+.jumbotron table{
+    width: 100%;
+}
+.photo-item{
+    margin-bottom: 0.3rem !important;
+}
+.photo-item table td div{
+    margin-bottom: 0 !important;
+}
+/* photo.html - END */
+
+/* order_confirm.html - START */
+.wrapper{
+    padding-bottom: 60px;
+}
+.confirm-info-header img.center {
+    width: 30% !important;
+}
+.confirm-info-header{
+    padding: 10px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+.confirm-info-header h3, .confirm-info-header p{
+    text-align: center;
+    margin-top: 0px;
+}
+.confirm-info-footer{
+    padding: 5px 20px !important;
+}
+.button-and-ds, .button-and-ds-f {
+    background: rgb(245,124,0);
+    color: #fff;
+    border: 0;
+    height: 48px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 17px;
+    line-height: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+/* order_confirm.html - END */
+
+/* order_result.html - START */
+.uk-modal-header span{
+    font-size: 16px !important;
+    font-family: Roboto Condensed;
+}
+span.result-contact{
+    font-weight: bold !important;
+    font-size: 24px !important;
+}
+/* .wrapper, .uk-modal-header {
+    height: -webkit-fill-available;
+} */
+
+.s-terms, h3{
+    font-family: Roboto Condensed;
+}
+.s-terms p{
+    margin: 0;
+}
+
+/* order_result.html - END */
+
+/* order_list.html - START */
+.order_list table {
+    margin-top: 0px;
+    height: 75px;
+}
+.order_list table td{
+    margin-top: 0px;
+    padding-bottom: 5px;
+}
+.order_list .jumbotron{
+    padding: 0px 10px 0px 15px !important;
+    margin: 5px 0px 0px 0px !important;
+    box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.025) !important;
+    font-family: Roboto Condensed !important;
+    margin-bottom: 0.2rem !important;
+}
+
+/* order_result.html - END */
+
+
+/* order_detail.html - START */
+.order-detail-info{
+    padding-bottom: 15px !important;
+    margin-top: 5px !important;
+    margin-bottom: 0.2rem !important;
+}
+.order-detail-info .info-list i {
+    margin-top: 10px;
+    float: left;
+    color: #9C9C9C; 
+}
+.order-detail-info .hotel-info .rating i {
+    float: none;
+    font-size: 14px;
+}
+.order-detail-info .info-list-item p {
+    margin: 5px !important;
+}
+
+.order-detail-info .info-list-item table th {
+    color: #000;
+}
+
+.order-detail-info .info-title {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000;
+}
+/* .order-detail-info .rating{
+    
+} */
+
+/* .order-detail-info .info-list-item-title .hotel-name{
+    float: left;
+} */
+
+/* order_detail.html - END */

@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{# {% block stylesheets %}
+    {{ parent() }}
+    
+    <style>
+    .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff;
+    }
+    .footer ul{
+        margin: 0;
+        height: 55px;
+    }
+    .footer ul li{
+        padding-left: 0;
+    }
+    .uk-tab::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        right: 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .footer a{
+        text-transform: none;
+    }
+    
+    .search_item1 .fa-search, .search_item1 .fa-calendar{
+        margin-top: 10px;
+        color: #007bff;
+    }
+    .top-search a{
+        padding: 0;
+        width: 30px;
+    }
+    .search_item1 button{
+        width: 100%;
+    }
+</style>
+{% endblock %} #}
+
+{#{% block navbar %}    
+    <header id="header">
+        <nav class="navbar navbar-expand-md bg-dark mb-3 col-12 col-md-12">
+            <div class="header-brand-logo">
+                <a href="#">
+                    <img class="logo" src="/leisure/images/logo_white.png">
+                </a>
+            </div>
+            <div class="top-search">
+                {% if ('/home' in app.request.pathinfo) == 1 %}
+                <a href="#modal-sections" class="search-toggle uk-button" uk-toggle><i class="fa fa-search"></i></a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+{% endblock %}#}
+
+{# {% block footer %}    
+    
+    <footer class="footer">
+        <ul class="uk-tab-bottom uk-child-width-expand uk-tab" uk-tab="">
+             
+            {% if ('/home' in app.request.pathinfo) == 1 %}
+                <li class="uk-active"><a id="home" href="#"><span uk-icon="home"></span><br/>Home</a></li>
+            {% elseif ('/hotel' in app.request.pathinfo) == 1 %}
+                <li><a id="home" href="#"><span uk-icon="home"></span><br/>Home</a></li>
+            {% else %}
+                <li><a id="home" href="#"><span uk-icon="home"></span><br/>Home</a></li>
+            {% endif %}
+            <li 
+                {% if ('/order' in app.request.pathinfo) == 1 %}
+                class="uk-active"
+                {% endif %}
+                ><a id="order" href="#" ><span uk-icon="list"></span><br/>My Trips</a></li>
+            <li 
+                {% if ('/advise' in app.request.pathinfo) == 1 %}
+                class="uk-active"
+                {% endif %}
+                ><a id="advise" href="#" aria-expanded="false"><span uk-icon="question"></span><br/>Advice</a></li>
+            <li 
+                {% if ('/address' in app.request.pathinfo) == 1 %}
+                class="uk-active"
+                {% endif %}
+                ><a id="address" href="#" aria-expanded="false"><span uk-icon="location"></span><br/>Contact</a></li>
+        </ul>
+    </footer>
+    
+{% endblock %} #}
+
+{# {% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        
+        jQuery(document).ready(function ($) {
+        
+            $("#home").click(function(){
+                location.href = '{{ path('home') }}';
+            });
+            $("#order").click(function(){
+                location.href = '{{ path('order_list') }}';
+            });
+            $("#advise").click(function(){
+                location.href = '{{ path('advise') }}';
+            });
+            $("#address").click(function(){
+                location.href = '{{ path('address') }}';
+            });
+        });
+    </script>
+{% endblock %} #}
+

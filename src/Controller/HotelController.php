@@ -55,7 +55,6 @@ class HotelController extends AbstractController
         $tagName = 'get_hotel(city_id='.$city_id.', country_id='.$country_id.')';
         $logId = 'client_ip='.$request->getClientIp();
         
-        // $date = $this->util->isNull($request->get('date'));
         if($date != null){
             $where_clause = 'and flight.departure_datetime like "'.$date.'%"';
         }else{
@@ -96,13 +95,6 @@ class HotelController extends AbstractController
 
         $this->logger->info("REPO RESULT:: ".var_export($repoResult, true));
         
-//        $date_set = $this->connection->fetchAllAssociative('
-//            SELECT departure_datetime FROM flight_info
-//                WHERE country_id='.$country_id.' and city_id='.$city_id.'
-//                GROUP BY departure_datetime
-//                ORDER by departure_datetime ASC
-//            ');
-        
         $date_set = $this->connection->fetchAllAssociative('
             SELECT flight.departure_datetime 
                 FROM flight_info as flight 
@@ -125,12 +117,6 @@ class HotelController extends AbstractController
                 ORDER by flight.departure_datetime ASC
             ');
         
-        
-//        foreach($repoResult as $key => $item){
-//            array_push($date_set, $item['departure_datetime']);
-//        }
-//        $date_set = array_unique($date_set);
-        
         $this->logger->info("start_date RESULT:: ".var_export($date_set, true));
         
         if ($repoResult) {
@@ -149,7 +135,6 @@ class HotelController extends AbstractController
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
         
         return $this->json($result);
-        // return $this->render('hotel/hotel_list.html.twig', $result);
     }
     
     /**
@@ -345,7 +330,6 @@ class HotelController extends AbstractController
         }
 
         return $this->json($result);
-        // return $this->render('hotel/room_list.html.twig', $result);
     }
     
     /**
@@ -366,14 +350,6 @@ class HotelController extends AbstractController
         $children_count = $request->get('children_count');
         $children_age = $request->get('children_age');
         $select_rooms = $request->get('select_rooms');
-
-        // $response = json_decode($request->getContent(), true);
-        // $request->request->replace(is_array($response) ? $response : array());
-        // $select_rooms = $response['select_rooms'];
-        // $adult_count = $response['adult_count'];
-        // $children_count = $response['children_count'];
-        // $children_age = $response['children_age'];
- 
         
         $this->logger->info("PARAMETER:: select_rooms=".var_export($select_rooms, true)
                     .", adult_count=".$adult_count

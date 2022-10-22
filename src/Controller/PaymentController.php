@@ -59,7 +59,6 @@ class PaymentController extends AbstractController
         
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'START'));
 
-        // if($this->service->is_prod == true){
             $data = null;
         
             if (0 === strpos($request->headers->get('Content-Type'), 'application/json') || $this->service->is_prod != true) {
@@ -129,7 +128,6 @@ class PaymentController extends AbstractController
                         );
                     }elseif ($data['status'] === '0'){ // PENDING
     //                    invoice detail-г лэндээс авч төлөвийг дахин шалгах
-                        
                         $payment_result = array(
                             'payment_status' => 0,
                             'paid_amount' => null,
@@ -159,27 +157,12 @@ class PaymentController extends AbstractController
                    'description' => 'No content. Invalid response.',
                );
     
-                // $payment_result = array(
-                //     'payment_status' => 1,
-                //     'paid_amount' => $data['amount'],
-                //     'description' => 'Захиалга амжилттай бүртгэгдлээ',
-                // );
                 $this->logger->info("PAYMENT SUCCESSFULLY COMPLETED BUT CONTENT IS NULL. TRY TO CHECK INVOICE DETAIL.");
             }
 
             $this->logger->info("PAYMENT CONFIRMATION RESULT:: ".var_export($payment_result, true));
             $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
             
-        // }else{
-        //     $payment_result = array(
-        //         'payment_status' => 1,
-        //         'paid_amount' => 100000,
-        //         'description' => 'Booking successfully done.',
-        //     );
-        //     $this->logger->info("LOCAL ENV DUMMY RESPONSE SENT.");
-        // }
-        
-        // return $this->render('payment/order_result.html.twig', $payment_result);
         return $this->redirectToRoute('reactResult', $payment_result);
     }
     
@@ -563,7 +546,6 @@ class PaymentController extends AbstractController
             "is_prod" => $this->service->is_prod,
         );
        
-        // return $this->render('payment/order_confirm.html.twig', $result);
         return $this->json($result);
     }
     
@@ -611,66 +593,6 @@ class PaymentController extends AbstractController
             );
                
         return $this->json($result);
-    }
-    
-    /**
-     * @Route("/photo", name="photo")
-     */
-    public function photo()
-    {
-        $this->logger->info('================================================');
-        $request = Request::createFromGlobals();
-        
-        $logStep = 0;
-        $tagName = 'photo()';
-        $logId = 'client_ip='.$request->getClientIp();
-
-        $params = $request->get('params');
-        $adult_count = $request->get('adult_count');
-        $children_count = $request->get('children_count');
-        $children_age = $request->get('children_age');
-        $trip_id = $request->get('trip_id');
-        $hotel_id = $request->get('hotel_id');
-        $is_special = $request->get('is_special');
-        
-        $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'START'));
-        $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'PARAMETERS: ADULT COUNT='.$adult_count
-                .' CHILDREN COUNT='.$children_count
-                .' CHILDREN AGES='.$children_age
-                .' TRIP ID='.$trip_id
-                .' PARAMS='.$params
-                ));
-        
-        $userAgent = $request->headers->get('User-Agent');
-        $regResult = preg_match("/Android/i", $userAgent);
-        $this->logger->info("Regex result=" .$regResult." User agent: " .$userAgent );
-        
-        $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
-
-        $result = array(
-            'upload_success' => null,
-            'user_id' => null,
-            'photo_id' => null,
-            'photo_path' => null,
-            'photo_names' => null,
-            'adult_count' => $adult_count,
-            'children_count' => $children_count,
-            'children_age' => $children_age,
-            'person_count' => $adult_count + $children_count,
-            'params' => $params,
-            'trip_id' => $trip_id,
-            'hotel_id' => $hotel_id,
-            'is_special' => $is_special,
-            'is_android' => ($regResult > 0) ? true : false,
-        );
-        
-        // return $this->json($result);
-
-        if($regResult > 0){
-            return $this->render('payment/photo_info.html.twig', $result);
-        }else{
-            return $this->render('payment/photo_upload.html.twig', $result);
-        }
     }
 
     /**
@@ -775,7 +697,6 @@ class PaymentController extends AbstractController
                     'adult_count' => $adult_count,
                     'children_count' => $children_count,
                     'children_age' => $children_age,
-                    // 'params' => $params,
                     'trip_id' => $trip_id,
                     'hotel_id' => $hotel_id,
                     'is_special' => $is_special,

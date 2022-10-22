@@ -30,10 +30,10 @@ class WebhookController extends AbstractController
             [
                 "eventType"=>"invoice.paid",
                 "data"=> [
-                    "invoiceNumber"=> $invoice_number, //request->get("invoice_number"),
+                    "invoiceNumber"=> $invoice_number,
                     "description"=>"",
                     "status"=>1,
-                    "amount"=> $total_amount, //$request->get("total_amount"),
+                    "amount"=> $total_amount,
                     "trackingData"=>"",
                     "createdAt"=>$now,
                     "expireDate"=>$now,

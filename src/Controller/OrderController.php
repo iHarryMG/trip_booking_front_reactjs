@@ -56,7 +56,6 @@ class OrderController extends AbstractController
             }
             $this->logger->info("USER SESSON:: USER ACCOUNT ID=".$userID.", ACCESS TOKEN=".$accessToken);
             
-            //            User table-н ID утга авах
             $user = $this->service->getUserId($this->connection, $request, $userID);
             $orderList = $this->service->getOrderListByUserId($this->connection, Request::createFromGlobals(), $user['user_id'][0]['id']);
             $this->logger->info("ORDER LIST RESULT:: ".var_export($orderList, true));
@@ -79,7 +78,6 @@ class OrderController extends AbstractController
             );
         }
         
-        // return $this->render('order/order_list.html.twig', $result);
         return $this->json($result);
     }
     
@@ -146,7 +144,6 @@ class OrderController extends AbstractController
         
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
         
-        // return $this->render('order/order_detail.html.twig', $result);
         return $this->json($result);
     }
     

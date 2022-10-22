@@ -89,10 +89,9 @@ class MainController extends AbstractController
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
         
         $result = array(
-            // 'code' => $LENDCODE,
             'year' => date("Y"),
         );
-        return $this->render('main/splash.html.twig', $result);
+        return $this->render('base.html.twig', $result);
     }
     
     /**
@@ -108,50 +107,13 @@ class MainController extends AbstractController
         $logId = 'client_ip='.$request->getClientIp();
         
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'START'));
-        
-        // $response = json_decode($request->getContent(), true);
-        // $request->request->replace(is_array($response) ? $response : array());
-        // $LENDCODE = $response['code'];
 
         $session = $this->requestStack->getSession();
         $LENDCODE = $session->get('lendcode_session')['code'];
 
-//        $startTime = new \DateTime('10:00:00');
-//        $endTime = new \DateTime('20:00:00');
-//        $dateTime = new \DateTime();
-//        $now = $dateTime->format('H:i:s');
-//        
-//        
-//        
-//        $sTime = new \DateTime($startTime);
-//        $eTime = new \DateTime($endTime);
-//        $n = new \DateTime($now);
-//        
-//        
-//        $this->logger->info("Одоо цаг: ".$now);
-//
-//        if ($sTime > $n) {
-//            $this->logger->info("10-с бага");
-//        }else if ($eTime < $n){
-//            $this->logger->info("20-с их");
-//        }
-//            
-//        if ($startTime < $now && $now < $endTime) {
-//            $this->logger->info("Захиалга боломжтой");
-//        }else{
-//            $this->logger->info("Захиалга боломжгүй");
-//        }
-//        
-//        $interval = date_create('now')->diff( $startTime );
-//        $this->logger->info("Цагийн зөрүү: ".var_export($interval, true));
-//        
-    
-        
         if($this->service->is_prod == true){  
-            // $LENDCODE = $request->get('code');
             $this->logger->info('PRODUCTION MODE - LEND EMBEDDED CODE: '.$LENDCODE);
         }else{
-            // $LENDCODE = 'YzhmNTk1NDg5MGI3YmZmMTA4NTZjZWVmYTkyMmZmZDFkNDc5MzE1NTkzMTAzNTIyY2M5NTczMGVjNmJhZjYzYQ';
             $this->logger->info('LOCAL MODE - LEND EMBEDDED CODE: '.$LENDCODE);
         }
 
@@ -169,7 +131,6 @@ class MainController extends AbstractController
         
                 if($user == null){ // new user
                     $userID = $this->service->saveUserInfo($userInfo, $request, $doctrine->getManager());
-//                  $tokenID = $this->service->saveAccessToken($lendAccessToken, $userID, $request, $entityManager);
                 }
                 
                 $session = $this->requestStack->getSession();
@@ -210,7 +171,6 @@ class MainController extends AbstractController
         
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
         
-        // return $this->render('base.html.twig', $result);
         return $this->json($result);
     }
     
@@ -291,7 +251,6 @@ class MainController extends AbstractController
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'END'));
         
         return $this->json($result);
-        // return $this->render('main/_city_list.html.twig', $result);
     }
     
     /**
@@ -353,10 +312,6 @@ class MainController extends AbstractController
         
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'START'));
 
-        // $entityManager = $doctrine->getManager();
-        // $repository = $entityManager->getRepository(HotelPhoto::class);
-        // $hotelResult = $repository->getSpecialHotelPhoto($is_special, $is_active);
-
         $queryResult = $this->connection->fetchAllAssociative('
             SELECT t.id as trip_id, p.hotel_img, t.is_special, t.hotel_list_id as hotel_id 
                 FROM trip_package as t
@@ -366,7 +321,6 @@ class MainController extends AbstractController
                 GROUP BY t.id 
                 ORDER by t.id DESC
             ');
-        
         
         $this->logger->info("SPECIAL HOTEL PHOTO RESULT:: ".var_export($queryResult, true));
 
@@ -402,13 +356,7 @@ class MainController extends AbstractController
         $country_id = $request->get('country_id');
         $city_id = $request->get('city_id');
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'PARAMETER::COUNTRY ID='.$country_id.', CITY ID='.$city_id));
-        
-//            SELECT DATE_FORMAT(departure_datetime, "%Y-%m-%d") as start_date 
-//                FROM flight_info
-//                WHERE country_id='.$country_id.' and city_id='.$city_id.'
-//                GROUP BY departure_datetime
-//                ORDER by departure_datetime ASC
-                            
+               
         $dateResult = $this->connection->fetchAllAssociative('
             SELECT DATE_FORMAT(departure_datetime, "%Y-%m-%d") as start_date 
                 FROM flight_info as flight 

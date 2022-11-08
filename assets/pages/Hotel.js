@@ -9,8 +9,6 @@ class Hotel extends React.Component {
         super(props);
     }
 
-    // API_URL = "http://localhost:8000/hotel/detail";
-    
     state = {
         photoItems: [],
         roomItems: [],

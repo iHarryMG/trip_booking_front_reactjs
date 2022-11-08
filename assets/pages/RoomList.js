@@ -10,8 +10,6 @@ class RoomList extends React.Component {
         super(props)
     }
 
-    API_URL = "http://localhost:8000/room/list";
-
     state = {
         resultItems: []
     }
@@ -32,7 +30,7 @@ class RoomList extends React.Component {
                     body: JSON.stringify(data) 
                 }
                 
-                const result = await fetch(this.API_URL, postOptions);
+                const result = await fetch('/room/list', postOptions);
                 const jsonResult = await result.json();    
                 this.setState({ resultItems : jsonResult })
 

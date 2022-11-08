@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { NavContext } from '../main/Context';
 
 const HomeCityList = ({country_id, is_one_item}) => {
-    const API_URL = "http://localhost:8000/get/city";
     const [countryListItems, setCountryListItems] = useState([]);
     const [oneItem, setOneItem] = useState([]);
     const { setNavIDs } = useContext(NavContext);
@@ -21,7 +20,7 @@ const HomeCityList = ({country_id, is_one_item}) => {
                     body: JSON.stringify(data) 
                 }
         
-                const result = await fetch(API_URL, postOptions);
+                const result = await fetch('/get/city', postOptions);
                 const jsonResult = await result.json();
                 setCountryListItems(jsonResult.result);
                 setOneItem(jsonResult.is_one_item);

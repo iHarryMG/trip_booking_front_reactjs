@@ -122,7 +122,7 @@ class RoomList extends React.Component {
             
             if(($(this).text() != undefined || $(this).text() != '') && $(this).text() > 0){
                 $("#order_trip_btn").css({
-                    'background-color' : '#0075ff',
+                    'background-color' : '#000066',
                     'color' : '#fff',
                 });
                 

@@ -27,7 +27,7 @@ html, body {
 }
 .search_item1 .fa-search, .search_item1 .fa-calendar{
     margin-top: 10px;
-    color: #007bff;
+    color: #000066;
 }
 .top-search a{
     padding: 0;
@@ -95,6 +95,39 @@ html, body {
 	background-color: #fff !important;
 	border-radius: .0rem !important;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #000066 !important;
+    border-color: #000066 !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #00004c !important;
+    border-color: #00004c !important;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #000066 !important;
+    border-color: #000066 !important;
+}
+.uk-button-primary {
+    background-color: #000066 !important;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.uk-button-primary:focus, .uk-button-primary:hover {
+    background-color: #00004c !important;
+    color: #fff;
+}
+.uk-radio:checked {
+    background-color: #0000c9 !important;
+    border-color: transparent;
+}
+a:active {
+    color: #ffffff !important;
+    background-color: #0000c9 !important;
+}
+
 /* General CSS - END */
 
 /* hotel_detail.html - START */
@@ -130,7 +163,7 @@ h3.title{
     line-height: 27px;
     text-align: center;
     text-transform: uppercase;
-    color: #0075FF;
+    color: #000066;
     padding: 0 40px;
 }
 h3.slogan{
@@ -142,7 +175,7 @@ h3.slogan{
     line-height: 27px;
     text-align: center;
     text-transform: uppercase;
-    color: #0075FF;
+    color: #000066;
     padding: 0 40px;
 }
 .hotel-detail-info { /* .jumbotron */
@@ -175,7 +208,7 @@ h3.slogan{
     list-style-type: square;
 }
 .filter_active{
-    background-color: #007bff;
+    background-color: #000066;
 }
 .filter_active p{
     color: #fff;
@@ -200,14 +233,14 @@ h3.slogan{
 
 /* room_list.html - START */
 #select-person i{
-    color: #0075ff;
+    color: #000066;
     margin-right: 10px;
 }
 .info-room{
     height: 70px;
 }
 .info-list-item table th{
-    color: #0075ff;
+    color: #000066;
 }
 .room_discount{
     text-decoration: line-through; padding-right: 10px; color:#9c9c9c;

@@ -166,7 +166,7 @@ const Photo = () => {
                   <table>
                     <thead>
                       <tr>
-                        <th style={{ color: "#0075FF", fontWeight: "normal"}} colSpan="2">
+                        <th style={{ color: "#0000c9", fontWeight: "normal"}} colSpan="2">
                             Main page of the passport /Mandatory/
                         </th>
                       </tr>

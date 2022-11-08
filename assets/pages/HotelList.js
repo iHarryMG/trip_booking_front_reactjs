@@ -119,7 +119,7 @@ const HotelList = () => {
       { tripItems &&
         <div style={{ paddingBottom: "60px!important" }}>
             <div style={{backgroundColor: "#fff",marginTop: "10px"}} className="hotel-list-items uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" data-uk-grid="">
-                <p style={{color: "#0075ff",fontFamily: "Roboto Condensed",padding: "5px",margin: "0", width: "100%", textAlign: "center"}}><span data-uk-icon="info"></span> The price below is a package price for 2 people.</p>
+                <p style={{color: "#0000c9",fontFamily: "Roboto Condensed",padding: "5px",margin: "0", width: "100%", textAlign: "center"}}><span data-uk-icon="info"></span> The price below is a package price for 2 people.</p>
             </div>
           { tripItems.map( (item, index) =>
             <Link key={index} className="wrapper-uk-card" to={ `/hotel/${item.hotel_id}/${item.trip_id}/${item.is_special}` } onClick={() => handleSetNavID(item.hotel_id, item.trip_id, item.is_special)} >

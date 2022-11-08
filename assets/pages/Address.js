@@ -31,7 +31,7 @@ const Address = () => {
                     <span className="info-item" data-uk-icon="facebook"></span>
                     <div className="info-list-item">
                         <span className="info-title">Social</span>
-                        <p><a style={{color: "#0075FF"}} href="https://www.facebook.com/iharrymg" target="_blank">www.facebook.com/iharrymg</a></p>
+                        <p><a style={{color: "#0000c9"}} href="https://www.facebook.com/iharrymg" target="_blank">www.facebook.com/iharrymg</a></p>
                     </div>
                 </li>
             </ul>

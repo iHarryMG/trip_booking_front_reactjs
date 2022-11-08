@@ -39,10 +39,10 @@ const SearchModal = () => {
           
             let city_id = $("#city_id").val();
             let country_id = $("#country_id").val();
-            let date = $("#selected_date").val();
+            let date = $("#selected_date").val() != '' ? '/'+$("#selected_date").val() : '';
             console.log("city_id: " + city_id +", country_id: "+ country_id+", date: "+ date);
 
-            var form_action = '/hotels/'+city_id+'/'+country_id+'/'+date;
+            var form_action = '/hotels/'+city_id+'/'+country_id+date;
             $("#search_trip").attr('action', form_action);
             $("#search_trip").submit();
         });

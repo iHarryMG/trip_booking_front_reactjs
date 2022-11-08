@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
     const navLinkStyles = ({ isActive }) => {
         return {
-            borderColor: isActive ? '#1e87f0' : undefined,
+            borderColor: isActive ? '#000066' : undefined,
+            color: isActive ? '#000066' : '#666',
         }
     }
 

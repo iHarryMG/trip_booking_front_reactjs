@@ -201,7 +201,7 @@ const PaymentConfirm = () => {
                                 </tr>
                                 <tr className="table-value">
                                     <td colSpan="3" style={{ width: "100%", textAlign: "left", fontSize: "12px" }} >
-                                        Please confirm your email and <span style={{ color: "#1e87f0"}} >click ОК</span>!
+                                        Please confirm your email and <span style={{ color: "#0000c9"}} >click ОК</span>!
                                         <br/>If not, please type your valid email above and click ОК.
                                     </td>
                                 </tr>
@@ -234,7 +234,7 @@ const PaymentConfirm = () => {
                         <div className="checkbox checkbox-success" style={{ float: "none", width: "100%"}} >
                             <input id="tc_confirm" className="styled" type="checkbox" />
                             <label htmlFor="tc_confirm">
-                                I agree with the <a href="#modal-overflow" style={{ color: "#1e87f0", textDecoration: "underline"}}  uk-toggle="" >Terms of Service</a>.
+                                I agree with the <a href="#modal-overflow" style={{ color: "#00004c", textDecoration: "underline"}}  uk-toggle="" >Terms of Service</a>.
                             </label>
                         </div>
                     </div>

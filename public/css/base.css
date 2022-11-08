@@ -42,7 +42,7 @@ img {
 	flex-wrap: unset;
 }
 .bg-dark {
-	background-color: #0075FF!important;
+	background-color: #000066 !important;
 }
 
 
@@ -137,7 +137,7 @@ img {
 }
 a:link, a:visited, a:hover , a:active {
   text-decoration: none;
-  color: #000;
+  color: #000066;
 }
 
 .no-result{

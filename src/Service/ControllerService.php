@@ -931,7 +931,8 @@ class ControllerService {
         $this->logger->info($this->util->generateLogMessage($tagName, $logId, $logStep, 'START'));
         
         $queryResult = $connection->fetchAllAssociative('
-            SELECT ot.id as order_trip_id, trip.is_special, ot.order_status, ot.updated_at, 
+            SELECT ot.id as order_trip_id, trip.is_special, ot.order_status, 
+                    DATE_FORMAT(ot.updated_at, "%Y.%m.%d") as updated_at,
                     country.country_name, city.city_name
                     FROM order_trip as ot
                     INNER JOIN user as u ON u.id=ot.user_id 

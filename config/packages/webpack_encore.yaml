@@ -1,8 +1,8 @@
 webpack_encore:
     # The path where Encore is building the assets - i.e. Encore.setOutputPath()
 
-    #output_path: '%kernel.project_dir%public/build'   #LOCAL USAGE
-    output_path: '/home4/itechmn1/tripbooking_react_public_html/build'  #PRODUCTION USAGE
+    output_path: '%kernel.project_dir%/public/build'   #LOCAL USAGE
+    # output_path: '/home4/itechmn1/tripbooking_react_public_html/build'  #PRODUCTION USAGE
     
     # If multiple builds are defined (as shown below), you can disable the default build:
     # output_path: false
@@ -39,8 +39,8 @@ webpack_encore:
 
 framework:
     assets:
-        #json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'  # LOCAL USAGE
-        json_manifest_path: '/home4/itechmn1/tripbooking_react_public_html/build/manifest.json'  #PRODUCTION USAGE
+        json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'  # LOCAL USAGE
+        # json_manifest_path: '/home4/itechmn1/tripbooking_react_public_html/build/manifest.json'  #PRODUCTION USAGE
 
 #when@prod:
 #    webpack_encore:

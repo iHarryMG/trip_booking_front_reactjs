@@ -213,10 +213,11 @@ class Hotel extends React.Component {
                                         <div className="info-list-item">
                                             <p className="info-list-item-title">Trip to { item.city_name } { item.country_name }</p>
                                             <p>
+                                                { item.night_count }
                                                 { item.night_count_plus && 
-                                                    (+ item.night_count_plus )
+                                                    `+${item.night_count_plus}`
                                                 }
-                                                nights 
+                                                &nbsp;nights 
                                                 ( { item.departure_datetime } - { item.arrival_datetime } )
                                             </p>
                                         </div>
@@ -298,12 +299,12 @@ class Hotel extends React.Component {
                                                             <td style={{ fontSize: "14px" }}><span>(TWN BED)</span></td>
                                                             <td style={{ textAlign: "right", fontSize: "14px" }}>
                                                                 <span>(2 persons)</span>
-                                                                <span style={{ paddingLeft:"5px" }}>{ item.night_count } nights
+                                                                <span style={{ paddingLeft:"5px" }}>
+                                                                    { item.night_count } 
                                                                     { item.night_count_plus &&
-                                                                        <>
-                                                                            ( +{ item.night_count_plus } )
-                                                                        </>
+                                                                        `+${item.night_count_plus}`
                                                                     }
+                                                                    &nbsp;nights
                                                                 </span>
                                                             </td>
                                                         </tr>

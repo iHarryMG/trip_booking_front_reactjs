@@ -70,7 +70,8 @@ class HotelController extends AbstractController
                 SELECT 
                         trip.hotel_list_id as hotel_id, trip.id as trip_id, 
                         photo.hotel_img, hotel.hotel_star, hotel.hotel_name, 
-                        flight.departure_datetime, flight.arrival_datetime, 
+                        DATE_FORMAT(flight.departure_datetime, "%Y.%m.%d") as departure_datetime, DATE_FORMAT(flight.arrival_datetime, "%Y.%m.%d") as arrival_datetime,
+                        DATE_FORMAT(flight.departure_datetime, "%H:%i%p") as departure_time,
                         flight.night_count, flight.night_count_plus, room.price_bb, trip.is_special
                 FROM flight_info as flight 
                 INNER JOIN trip_package as trip 
@@ -96,7 +97,10 @@ class HotelController extends AbstractController
         $this->logger->info("REPO RESULT:: ".var_export($repoResult, true));
         
         $date_set = $this->connection->fetchAllAssociative('
-            SELECT flight.departure_datetime 
+            SELECT 
+                DATE_FORMAT(flight.departure_datetime, "%Y-%m-%d") as departure_datetime,
+                DATE_FORMAT(flight.departure_datetime, "%b") as departure_month,
+                DATE_FORMAT(flight.departure_datetime, "%d") as departure_day
                 FROM flight_info as flight 
                 INNER JOIN trip_package as trip 
                 INNER JOIN hotel_list as hotel 

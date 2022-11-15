@@ -101,7 +101,8 @@ class OrderController extends AbstractController
             SELECT ot.id as order_trip_id, trip.is_special, ot.invoice_num, ot.order_status, ot.updated_at, ot.total_amount, 
                     u.last_name, u.first_name, country.country_name, city.city_name, hotel.hotel_name, hotel.hotel_star, 
                     ot.adult_count, ot.children_count, ot.children_age, ot.car_price_id,
-                    flight.departure_datetime, flight.arrival_datetime, flight.night_count, flight.night_count_plus, flight.direction, trip.insurance
+                    flight.night_count, flight.night_count_plus, flight.direction, trip.insurance,
+                    DATE_FORMAT(flight.departure_datetime, "%Y.%m.%d") as departure_datetime, DATE_FORMAT(flight.arrival_datetime, "%Y.%m.%d") as arrival_datetime
                     FROM order_trip as ot
                     INNER JOIN user as u ON u.id=ot.user_id 
                     INNER JOIN trip_package as trip ON trip.id=ot.trip_id

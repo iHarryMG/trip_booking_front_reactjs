@@ -123,7 +123,7 @@ html, body {
     background-color: #0000c9 !important;
     border-color: transparent;
 }
-a:active {
+#search-modal-sections a:active {
     color: #ffffff !important;
     background-color: #0000c9 !important;
 }

@@ -155,7 +155,7 @@ const PaymentConfirm = () => {
     return (
         <>
             { resultItems != '' &&
-                <div className="wrapper"  id="wrapper-success" style={{display: "none"}}>
+                <div className="wrapper"  id="wrapper-success">
                     <div className="uk-modal-header confirm-info-header">
                         <img src="../../leisure/images/confirm.png" className="center" />
                         <h4 style={{ textAlign: "center", margin: "5px 0 10px 0", fontWeight: "bold" }} >

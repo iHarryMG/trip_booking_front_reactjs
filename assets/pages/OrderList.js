@@ -21,8 +21,7 @@ const OrderList = () => {
 
   return (
     <>
-      { orderItems != '' && orderItems != null 
-        ?
+      { orderItems && 
           <div className="order_list">
           { orderItems.map( item => 
               <div key={item.order_trip_id} className="jumbotron col-12 col-md-12">
@@ -47,7 +46,9 @@ const OrderList = () => {
                                         )
                                       }
                                   </td>
-                                  <td style={{ width: "25%", textAlign: "left", fontSize: "14px" }}>{format(new Date(item.updated_at), 'yyyy-MM-dd')}</td>  
+                                  <td style={{ width: "25%", textAlign: "left", fontSize: "14px" }}>
+                                      { item.updated_at }
+                                  </td>  
                               </tr>
                             </tbody>
                           </table>
@@ -56,12 +57,11 @@ const OrderList = () => {
               </div>
           )}
           </div>
-          
-      :
+      }
+      { !orderItems &&
           <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="">
               <p className="no-result">There is no trip history.</p>
           </div>
-          
       }
     </>
   )

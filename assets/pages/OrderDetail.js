@@ -15,11 +15,11 @@ const OrderDetail = () => {
         formData.append("order_id", order_id);
 
         axios.post('/order/detail', formData).then((res) => {      
-        if(res.status === 200){
-            setResultItem(res.data);
-        }else{
-            handleCustomUKModal("open", "Couldn't get order detail. <br/>Please try again. Status code: "+res.status+", Error message: "+res.statusText);
-        }
+            if(res.status === 200){
+                setResultItem(res.data);
+            }else{
+                handleCustomUKModal("open", "Couldn't get order detail. <br/>Please try again. Status code: "+res.status+", Error message: "+res.statusText);
+            }
         }); 
 
     }, []);
@@ -48,7 +48,7 @@ const OrderDetail = () => {
                                     <i className="fa fa-plane fa-lg"></i>
                                     <div className="info-list-item">
                                         <p className="info-list-item-title">{item.country_name} country, {item.city_name}</p>
-                                        <p>{item.direction} {format(new Date(item.departure_datetime), 'yyyy-MM-dd')} - {format(new Date(item.arrival_datetime), 'yyyy-MM-dd')}</p>
+                                        <p>{item.direction} { item.departure_datetime } - { item.arrival_datetime }</p>
                                     </div>
                                 </li>
                                 <li>

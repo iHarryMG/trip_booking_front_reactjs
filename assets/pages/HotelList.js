@@ -104,10 +104,10 @@ const HotelList = () => {
               }
               { dateItem && dateItem.map( (item, index) => 
                     <li key={index} style={dateFilterStyle_UkSliderItems_li}>
-                        <a href={ `/hotels/${city_id}/${country_id}/${format(new Date(item.departure_datetime), 'yyyy-MM-dd')}`} >
+                        <a href={ `/hotels/${city_id}/${country_id}/${ item.departure_datetime }`} >
                             <div className="uk-position-center uk-panel list-date">
-                                <p className="list-date-month" style={{color: "#757775"}}>{ months[new Date(item.departure_datetime).getMonth()] }</p>  
-                                <p className="list-date-day" style={{fontSize: "xx-large", fontWeight: "bold", color: "#757775"}}>{ (new Date(item.departure_datetime)).getDate() }</p>
+                                <p className="list-date-month" style={{color: "#757775"}}>{ item.departure_month }</p>  
+                                <p className="list-date-day" style={{fontSize: "xx-large", fontWeight: "bold", color: "#757775"}}>{ item.departure_day }</p>
                             </div>
                         </a>
                     </li>     
@@ -138,11 +138,11 @@ const HotelList = () => {
                             <h1 className="uk-card-title">{ item.hotel_name }</h1>
                             <div className="list-info">
                                 <p className="hlist-date">
-                                  { format(new Date(item.departure_datetime), 'yyyy.MM.dd') } - { format(new Date(item.arrival_datetime), 'yyyy.MM.dd') }
+                                  { item.departure_datetime } - { item.arrival_datetime }
                                 </p>
                                 <p className="hlist-time">
                                     <span><i className="fa fa-plane fa-lg"></i></span>
-                                    <span style={{paddingLeft:"5px"}}>{ format(new Date(item.departure_datetime), 'hh:mmaaa') }</span>
+                                    <span style={{paddingLeft:"5px"}}>{ item.departure_time }</span>
                                     <span style={{paddingLeft:"5px"}}>{ item.night_count } nights
                                         { item.night_count_plus &&
                                           <>
